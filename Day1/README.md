@@ -24,12 +24,16 @@ Kubeadm allows us to customize and configure our clusters according to our needs
 - AMI : Ubuntu 24.04
 - Name : master-node
 
+---
+
 ## Step 2 : Update and Upgrade the System
 Start by updating the package list and upgrading the installed packages to the latest versions.
 
 ```bash
 sudo apt update && sudo apt upgrade -y
 ```
+
+---
 
 ## Step 3 : Install Docker
 Kubernetes uses Docker as its container runtime. Install Docker on all nodes (master and worker nodes).
@@ -63,6 +67,7 @@ Hold the packages at their current version to prevent automatic upgrades:
 ```bash
 sudo apt-mark hold kubelet kubeadm kubectl
 ```
+
 ---
 
 ## Step 5 : Disable Swap
@@ -126,6 +131,8 @@ Verify the cluster status.
 kubectl get nodes
 ```
 
+---
+
 ## Step 8: Install a Pod Network Add-on on Master node
 
 Install a pod network so that your pods can communicate with each other. We'll use Flannel for this example.
@@ -139,6 +146,8 @@ Verify that all nodes are up and running.
 ```bash
 kubectl get nodes
 ```
+
+---
 
 ## Step 9 : Join Worker Nodes to the Cluster
 
